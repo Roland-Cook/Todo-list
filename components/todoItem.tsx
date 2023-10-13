@@ -1,0 +1,20 @@
+import React from 'react'
+
+type TodoItemProps = {
+    id : string
+    title : string
+    complete: boolean
+}
+
+
+const TodoItem = ({id, title, complete} : TodoItemProps) => {
+    return (
+    <li className='flex gap-1 items-center'>
+        <input type="checkbox" className='cursor-pointer peer' id = {id} />
+        <label htmlFor={id} className=' cursor-pointer peer-checked:line-through peer-checked:text-slate-500'>{title}</label>
+    </li>  
+
+    )
+    }
+
+export default TodoItem
