@@ -2,6 +2,7 @@ import React from 'react'
 
 import Link from 'next/link'
 import {prisma} from "@/db"
+import { redirect } from 'next/navigation'
 
 
 async function createTodo (data:FormData) {
@@ -15,7 +16,8 @@ async function createTodo (data:FormData) {
 
   await prisma.todo.create({data: {title,complete:false}})
 
-  console.log(title)
+  redirect("/")
+
 }
 
 const page = () => {
